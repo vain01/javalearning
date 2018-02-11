@@ -1,0 +1,10 @@
+*/.gradle/*
+*/.idea/*
+*/build/*
+*/gradle/*
+*/logs/*
+*/out/*
+*/test-output/*
+*/gradlew
+*/gradlew.bat
+*/*.iml
