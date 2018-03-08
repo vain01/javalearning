@@ -9,7 +9,7 @@ public class GetMaxN {
 			System.out.println("error, out of range");
 			return 99999;
 		}
-		if (nums.size() == 1 && n == 1) {
+		if (nums.size() == 1) {
 			return nums.get(0);
 		}
 		ArrayList<Integer> leftHand = new ArrayList<>();
@@ -23,7 +23,7 @@ public class GetMaxN {
 			}
 		}
 		rightHand.add(nums.get(0));
-		if (rightHand.size() == 1 && n == 1 || rightHand.size() >= n) {
+		if (rightHand.size() == 1 || rightHand.size() >= n) {
 			return getMaxN(rightHand, n);
 		} else {
 			return getMaxN(leftHand, n - rightHand.size());
