@@ -62,7 +62,7 @@ public class AesUtil {
 			cipher.init(Cipher.DECRYPT_MODE, key);
 			return new String(cipher.doFinal(StringUtil.hex2Bytes(encryptedContent)));
 		} catch (Exception e) {
-			throw new Exception("AES加密发生错误", e);
+			throw new Exception("AES解密发生错误", e);
 		}
 	}
 }

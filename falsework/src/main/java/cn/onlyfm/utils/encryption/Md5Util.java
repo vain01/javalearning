@@ -11,7 +11,13 @@ public class Md5Util {
 	public static final String CHARSET_UTF8 = "UTF-8";
 	private static final String ALGORITHM = "MD5";
 
-	public static String MD5(String content) {
+	/**
+	 * MD5加密
+	 *
+	 * @param content 待加密内容
+	 * @return 16进制字符串
+	 */
+	public static String MD5(String content) throws Exception {
 		try {
 			MessageDigest md5 = MessageDigest.getInstance(ALGORITHM);
 			// 使用指定的 byte 数组更新摘要
@@ -21,8 +27,7 @@ public class Md5Util {
 			// 转换成16进制字符串
 			return StringUtil.byte2Hex(digest);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new Exception("MD5加密发生错误", e);
 		}
-		return content;
 	}
 }
