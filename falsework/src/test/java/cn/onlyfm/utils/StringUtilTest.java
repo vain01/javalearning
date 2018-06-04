@@ -31,6 +31,7 @@ public class StringUtilTest {
 	@Test
 	public void testByte2Hex() throws Exception {
 		System.out.println(StringUtil.byte2Hex("abcd".getBytes()));
+		System.out.println(StringUtil.byte2Hex("".getBytes()));
 		System.out.println(StringUtil.byte2Hex("A".getBytes()));
 		System.out.println(StringUtil.byte2Hex("0".getBytes()));
 	}
@@ -50,5 +51,23 @@ public class StringUtilTest {
 		System.out.println(StringUtil.getSpecifiedLengthStr(3, CharType.CHAR_CHINESE));
 		System.out.println(StringUtil.getSpecifiedLengthStr(40000, CharType.CHAR_CHINESE));
 		Assert.assertEquals(StringUtil.getSpecifiedLengthStr(40000, CharType.CHAR_CHINESE).length(), 40000);
+	}
+
+	@Test(dataProvider = "testJoinStringData")
+	public void testJoinString(String[] strArray, String splitter, String expected) throws Exception {
+		Assert.assertEquals(StringUtil.joinString(strArray, splitter), expected);
+	}
+
+	@DataProvider(name = "testJoinStringData")
+	public Object[][] testJoinStringData() {
+		return new Object[][]{
+			{new String[]{"ab", "b"}, "-", "ab-b"},
+			{new String[]{"ab", null, "b"}, "-", "ab-null-b"},
+			{new String[]{"a"}, ",", "a"},
+			{new String[]{"ba", "", "c"}, "8", "ba88c"},
+			{new String[]{"ba", "", "c"}, "", "bac"},
+			{new String[]{}, "-", ""},
+			{null, "x", ""}
+		};
 	}
 }

@@ -24,7 +24,7 @@ public class StringUtil {
 	 */
 	public static String setMask(String str, int prefixRetain, int suffixRetain) {
 		// 验空
-		if (StringUtils.isBlank(str)) return "";
+		if (StringUtils.isBlank(str)) return StringUtil.EMPTY;
 
 		// 保留位长度检查
 		prefixRetain = prefixRetain < 0 ? 0 : prefixRetain;
@@ -69,6 +69,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static byte[] hex2Bytes(String source) {
+		if (StringUtils.isBlank(source)) return null;
 		// 每两个16进制字符组成一个字节
 		byte[] sourceBytes = new byte[source.length() / 2];
 		for (int i = 0; i < sourceBytes.length; i++) {
@@ -103,12 +104,29 @@ public class StringUtil {
 	}
 
 	private static void fillResultStr(String base, int length, StringBuilder stringBuilder) {
-		for (int i = 0; i < length; i++) {
-			stringBuilder.append(randomOne(base));
-		}
+		for (int i = 0; i < length; i++) stringBuilder.append(randomOne(base));
 	}
 
 	private static char randomOne(String string) {
 		return string.charAt(RandomUtil.nextInt(string.length()));
+	}
+
+	/**
+	 * 用指定的分隔符连接字符串
+	 *
+	 * @param strArray
+	 * @param splitter
+	 * @return
+	 */
+	public static String joinString(String[] strArray, String splitter) {
+		if (strArray == null || strArray.length == 0) return StringUtil.EMPTY;
+		StringBuilder result = new StringBuilder();
+		if (splitter == null || splitter == StringUtil.EMPTY) {
+			for (String str : strArray) result.append(str);
+			return result.toString();
+		}
+		for (String str : strArray) result.append(str).append(splitter);
+		result.setLength(result.length() - 1);
+		return result.toString();
 	}
 }
