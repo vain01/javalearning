@@ -29,18 +29,19 @@ public class StringUtilTest {
 	}
 
 	@Test
-	public void testByte2Hex() throws Exception {
-		System.out.println(StringUtil.byte2Hex("abcd".getBytes()));
-		System.out.println(StringUtil.byte2Hex("".getBytes()));
-		System.out.println(StringUtil.byte2Hex("A".getBytes()));
-		System.out.println(StringUtil.byte2Hex("0".getBytes()));
+	public void testByte2HexString() throws Exception {
+		System.out.println(StringUtil.bytes2HexString("abcd".getBytes()));
+		System.out.println(StringUtil.bytes2HexString("".getBytes()));
+		System.out.println(StringUtil.bytesToHexString("0".getBytes()));
+		System.out.println(StringUtil.bytesToHexString("A".getBytes()));
+		System.out.println(StringUtil.bytesToHexString("a".getBytes()));
 	}
 
 	@Test
-	public void testHex2Bytes() throws Exception {
-		System.out.println(new String(StringUtil.hex2Bytes("6162634")));
-		System.out.println(StringUtil.byte2Hex(StringUtil.hex2Bytes("616263")));
-		Assert.assertEquals(StringUtil.byte2Hex(StringUtil.hex2Bytes("616263")), "616263");
+	public void testHexString2Bytes() throws Exception {
+		System.out.println(new String(StringUtil.hexString2Bytes("6162634")));
+		System.out.println(StringUtil.bytes2HexString(StringUtil.hexString2Bytes("616263")));
+		Assert.assertEquals(StringUtil.bytes2HexString(StringUtil.hexString2Bytes("616263")), "616263");
 	}
 
 	@Test

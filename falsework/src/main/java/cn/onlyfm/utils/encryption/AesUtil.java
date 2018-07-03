@@ -36,7 +36,7 @@ public class AesUtil {
 			SecretKeySpec key = new SecretKeySpec(enCodeFormat, ALGORITHM);
 			Cipher cipher = Cipher.getInstance(ALGORITHM);
 			cipher.init(Cipher.ENCRYPT_MODE, key);
-			return StringUtil.byte2Hex(cipher.doFinal(content.getBytes(CHARSET_NAME)));
+			return StringUtil.bytes2HexString(cipher.doFinal(content.getBytes(CHARSET_NAME)));
 		} catch (Exception e) {
 			throw new Exception("AES加密发生错误", e);
 		}
@@ -60,7 +60,7 @@ public class AesUtil {
 			SecretKeySpec key = new SecretKeySpec(enCodeFormat, ALGORITHM);
 			Cipher cipher = Cipher.getInstance(ALGORITHM);
 			cipher.init(Cipher.DECRYPT_MODE, key);
-			return new String(cipher.doFinal(StringUtil.hex2Bytes(encryptedContent)));
+			return new String(cipher.doFinal(StringUtil.hexString2Bytes(encryptedContent)));
 		} catch (Exception e) {
 			throw new Exception("AES解密发生错误", e);
 		}

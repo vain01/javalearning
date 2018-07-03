@@ -41,7 +41,7 @@ public class Md5Util {
 			// 通过执行诸如填充之类的最终操作完成哈希计算
 			byte[] digest = md5.digest();
 			// 转换成16进制字符串
-			return StringUtil.byte2Hex(digest);
+			return StringUtil.bytes2HexString(digest);
 		} catch (Exception e) {
 			throw new Exception("MD5加密发生错误", e);
 		}

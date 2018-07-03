@@ -6,12 +6,12 @@ public class BinarySearch {
 	/**
 	 * 循环方式实现
 	 *
-	 * @param nums  有序的数组
-	 * @param key   待查关键字
+	 * @param nums 有序的数组
+	 * @param key  待查关键字
 	 * @return
 	 */
 	public static int binarySearchWhile(int[] nums, int key) {
-		if (nums.length < 1)
+		if (nums == null || nums.length < 1)
 			return -1;
 		int lo = 0;
 		int hi = nums.length - 1;
@@ -31,8 +31,8 @@ public class BinarySearch {
 	/**
 	 * 递归方式实现
 	 *
-	 * @param nums  有序的数组
-	 * @param key   待查关键字
+	 * @param nums 有序的数组
+	 * @param key  待查关键字
 	 * @return
 	 */
 	public static int binarySearchRecursion(int[] nums, int key) {
@@ -40,7 +40,7 @@ public class BinarySearch {
 	}
 
 	private static int binarySearchRecursion(int[] nums, int lo, int hi, int key) {
-		if (lo > hi)
+		if (nums == null || lo > hi)
 			return -1;
 		int mid = lo + (hi - lo) / 2;
 		if (key > nums[mid]) {

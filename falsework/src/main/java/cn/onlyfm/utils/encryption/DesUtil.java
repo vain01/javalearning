@@ -33,7 +33,7 @@ public class DesUtil {
 			// 用密匙初始化Cipher对象
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 			// 获取数据并加密
-			return StringUtil.byte2Hex(cipher.doFinal(content.getBytes()));
+			return StringUtil.bytes2HexString(cipher.doFinal(content.getBytes()));
 		} catch (Exception e) {
 			throw new Exception("DES加密发生错误", e);
 		}
@@ -49,7 +49,7 @@ public class DesUtil {
 	 */
 	public static String desDecrypt(String encryptedContent, String desKey) throws Exception {
 		// 解密数据
-		byte[] sourceBytes = StringUtil.hex2Bytes(encryptedContent);
+		byte[] sourceBytes = StringUtil.hexString2Bytes(encryptedContent);
 		try {
 			SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(ALGORITHM);
 			DESKeySpec desKeySpec = new DESKeySpec(desKey.getBytes());
