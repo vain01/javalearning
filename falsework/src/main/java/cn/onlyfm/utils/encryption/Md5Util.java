@@ -22,6 +22,10 @@ public class Md5Util {
 		return md5Hex(content, Md5Util.CHARSET_UTF8);
 	}
 
+	public static String md5(String content, String salt) throws Exception {
+		return md5Hex(content + salt, Md5Util.CHARSET_UTF8);
+	}
+
 	/**
 	 * MD5加密
 	 *

@@ -8,4 +8,6 @@ import lombok.Data;
 
 @Data
 public class LombokLearning {
+	private long phone;
+	private String name;
 }

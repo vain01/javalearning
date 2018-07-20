@@ -9,6 +9,13 @@ import org.testng.annotations.Test;
  * @author haoliang on 2018/5/18.
  */
 public class Md5UtilTest {
+	@Test
+	public void testTools() throws Exception {
+		String content = "123";
+		String encryptedContent = Md5Util.md5(content);
+		System.out.println(encryptedContent);
+		System.out.println(encryptedContent.length());
+	}
 
 	@Test(dataProvider = "testMD5Data")
 	public void testMD5(String content, String expectedResult) throws Exception {
@@ -23,7 +30,9 @@ public class Md5UtilTest {
 			{"Ch12332100", "271a73c29be4e9a790b627ed188ae4c1"},
 			{"Ch123321009c295211cefc44ac8c5c7bcf1a1e219a", "2c706e6c7af2da22db8df012537b2392"},
 			{"271a73c29be4e9a790b627ed188ae4c19c295211cefc44ac8c5c7bcf1a1e219a", "46e86bc05468c06eb3b1d95151bc1c99"},
-			{"abc", DigestUtils.md5Hex("abc")}
+			{"abc", DigestUtils.md5Hex("abc")},
+			{"miaobt", "3dde90d47193eaaa5a84e040226f89f4"},
+			{"",""}
 		};
 	}
 

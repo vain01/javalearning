@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSON;
 import java.util.List;
 import java.util.Map;
 
-public class JsonUtils {
+public class JsonUtil {
 
 	private static ObjectMapper objectMapper = new ObjectMapper();
 
@@ -124,6 +124,15 @@ public class JsonUtils {
 	public static JsonObject stringToJsonObject(String jsonStr) {
 		JsonParser parser = new JsonParser();
 		return parser.parse(jsonStr).getAsJsonObject();
+	}
+
+	public String mapToJsonStr(Map<String, String> param) {
+		String result = StringUtils.EMPTY;
+		if (param == null || param.isEmpty()) {
+			return result;
+		}
+		result = JSON.toJSONString(param);
+		return result;
 	}
 }
  

@@ -72,6 +72,9 @@ public class StringUtil {
 	 * @return
 	 */
 	public static String bytesToHexString(byte[] srcBytes) {
+		if (srcBytes == null) {
+			return StringUtils.EMPTY;
+		}
 		StringBuilder result = new StringBuilder();
 		for (byte b : srcBytes) {
 			//分别添加高位和地位
@@ -87,7 +90,9 @@ public class StringUtil {
 	 * @return
 	 */
 	public static byte[] hexString2Bytes(String source) {
-		if (StringUtils.isBlank(source)) return null;
+		if (StringUtils.isBlank(source)) {
+			return null;
+		}
 		// 每两个16进制字符组成一个字节
 		byte[] sourceBytes = new byte[source.length() / 2];
 		for (int i = 0; i < sourceBytes.length; i++) {

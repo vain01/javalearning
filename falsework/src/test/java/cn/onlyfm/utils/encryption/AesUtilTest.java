@@ -11,7 +11,7 @@ public class AesUtilTest {
 
 	@Test(dataProvider = "testAesEncryptData")
 	public void testAesEncrypt(String content, String keySeed, String expectedEncryptedContent) throws Exception {
-		Assert.assertEquals(AesUtil.aesEncrypt(content, keySeed), expectedEncryptedContent);
+		Assert.assertEquals(AesUtil.Encrypt(content, keySeed), expectedEncryptedContent);
 	}
 
 	@DataProvider(name = "testAesEncryptData")
@@ -25,7 +25,7 @@ public class AesUtilTest {
 
 	@Test(dataProvider = "testAesDecryptData")
 	public void testAesDecrypt(String encryptedContent, String keySeed, String expectedContent) throws Exception {
-		Assert.assertEquals(AesUtil.aesDecrypt(encryptedContent, keySeed), expectedContent);
+		Assert.assertEquals(AesUtil.Decrypt(encryptedContent, keySeed), expectedContent);
 	}
 
 	@DataProvider(name = "testAesDecryptData")

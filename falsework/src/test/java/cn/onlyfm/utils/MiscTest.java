@@ -34,6 +34,25 @@ public class MiscTest {
 	}
 
 	@Test
+	public void testBase64() {
+		String content = "sss";
+		String encodedStr = Base64.getEncoder().encodeToString(content.getBytes());
+		String decodedStr = new String(Base64.getDecoder().decode(encodedStr));
+		System.out.println(decodedStr);
+		System.out.println("=" + (content.length() > 2048 ? content.substring(0, 2048) : content));
+	}
+
+	@Test
+	public void test() {
+		Map<String, String> map = null;
+		sxx(map);
+	}
+
+	public void sxx(Map<String, String> map) {
+		System.out.println(map.isEmpty());  //NPE
+	}
+
+	@Test
 	public void testDateFormat() throws ParseException {
 		Date date = new Date();
 		System.out.println(date); // 		Fri Jun 29 17:01:49 CST 2018
