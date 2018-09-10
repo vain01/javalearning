@@ -21,6 +21,13 @@ public class MiscTest {
 	public static final String DATE_TIMESTAMP_SHORT_FORMAT = "yyyyMMddHHmmss";
 	public static final String DATE_TIMESTAMP_LONG_FORMAT = "yyyyMMddHHmmssS";
 
+	@Test
+	public void testMis(){
+		System.out.println("sfd" + null + "asfd");
+		int[] ints = new int[0];
+		System.out.println(ints.length);
+	}
+
 	@DataProvider(name = "testMobileRegexData")
 	public static Object[][] testMobileRegexData() {
 		return new Object[][]{

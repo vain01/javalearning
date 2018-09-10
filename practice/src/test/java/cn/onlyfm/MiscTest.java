@@ -5,15 +5,76 @@ import cn.onlyfm.annotation.User;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author haoliang on 2018/7/6.
  */
 public class MiscTest {
 	@Test
-	public void testMap(){
+	public void testRandom() {
+		double rndNo = ThreadLocalRandom.current().nextDouble();
+		System.out.println(rndNo);
+		System.out.println(rndNo < 0.2);
+		System.out.println();
+	}
+
+	@Test
+	public void testLong() {
+		Long x = 1534313411000L;
+		Long y = 1534313411000L;
+		System.out.println(Long.compare(x, y) == 0);
+		System.out.println(Long.compare(x, y) < 0);
+		System.out.println(Long.compare(x, y) > 0);
+		System.out.println(x == y);
+		System.out.println(x < y);
+		System.out.println(x > y);
+	}
+
+	@Test
+	public void testMap1() {
+		Map result = new HashMap();
+
+		Map a = null;
+		result.putAll(a);
+	}
+
+	@Test
+	public void testArrayForeach() {
+		List<String> list = new ArrayList<String>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		for (String s : list) {
+			if (s.equals("b")) {
+				list.remove(s);
+			}
+		}
+		System.out.println(list);
+	}
+
+	@Test
+	public void testArray() {
+		List<String> list = new ArrayList<String>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + ":" + list.get(i));
+			if (list.get(i).equals("b")) {
+				list.remove(i);
+				i--;
+			}
+		}
+		System.out.println(list);
+	}
+
+	@Test
+	public void testMap() {
 		Map<String, String> map = new HashMap<String, String>();
 		System.out.println(map.get("rt"));
 	}

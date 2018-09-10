@@ -8,16 +8,16 @@ import org.testng.annotations.Test;
 public class EnumTest {
 	@Test
 	public void testAcceptStatus() {
-		System.out.println(AcceptStatus.SUCCESS);
-		System.out.println(AcceptStatus.SUCCESS.name());
+		System.out.println(AcceptStatus.SUCCESS);   //1:成功
+		System.out.println(AcceptStatus.SUCCESS.name()); //SUCCESS
 		for (AcceptStatus acceptStatus : AcceptStatus.values()) {
 			System.out.println(acceptStatus);
 		}
 
 		System.out.println();
-		System.out.println(TransStatus.SUCCESS);
-		System.out.println(TransStatus.SUCCESS.toString());
-		System.out.println(TransStatus.SUCCESS.name());
-		System.out.println(TransStatus.SUCCESS.name().toString());
+		System.out.println(TransStatus.SUCCESS);    //成功
+		System.out.println(TransStatus.SUCCESS.toString()); //成功
+		System.out.println(TransStatus.SUCCESS.name()); //SUCCESS
+		System.out.println(TransStatus.SUCCESS.name().toString());  //SUCCESS
 	}
 }

@@ -7,14 +7,32 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author haoliang on 2018/7/19.
  */
 public class TempTest {
+	@Test
+	public void testJsonMap() {
+		Long ag = Long.valueOf("3");
+		System.out.println(ag+1);
+	}
+
+	@Test
+	public void testArray() {
+		List<String> list = new ArrayList<>();
+		list.add("89");
+		list.add("9");
+		list.add("999");
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).equals("9")) {
+				list.remove(i);
+			}
+		}
+		System.out.println(list);
+	}
+
 	@Test
 	public void testSign() throws Exception {
 		String bizDataQueryString = "mobile=17717550338";
