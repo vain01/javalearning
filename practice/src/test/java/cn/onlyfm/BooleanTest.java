@@ -11,4 +11,15 @@ public class BooleanTest {
 		boolean ret = new Boolean("1");
 		System.out.println(ret);
 	}
+
+	@Test
+	public void testChangeable() {
+		Boolean setUserPrizeResult = Boolean.FALSE;
+		setBooleanValue(setUserPrizeResult);
+		System.out.println(setUserPrizeResult); //返回 false, Boolean是不可变对象
+	}
+
+	private void setBooleanValue(Boolean setUserPrizeResult) {
+		setUserPrizeResult = Boolean.TRUE;
+	}
 }

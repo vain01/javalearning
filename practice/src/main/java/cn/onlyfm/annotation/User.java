@@ -1,14 +1,18 @@
 package cn.onlyfm.annotation;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author haoliang on 2018/7/6.
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 	private String userName;
-	private long moblie;
+	private Long moblie;
 	public int habbit;
 
 	public void showBirthday(){

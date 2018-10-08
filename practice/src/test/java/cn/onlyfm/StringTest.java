@@ -15,17 +15,29 @@ public class StringTest {
 	}
 
 	@Test
+	public void testEqual() {
+		int value = 1;
+		Object vObj = value;
+		String vStr = "1";
+		Object vStrObj = vStr;
+		System.out.println(vStr.equals(value));
+		System.out.println(vStr.equals(vObj));
+		System.out.println(vStr.equals(vStrObj));
+	}
+
+	@Test
 	public void testSubString() {
-		String couponInfo = "满29元15元减";
+		String couponInfo = "满29元减15元";
 		System.out.println(couponInfo.length());
 		System.out.println(couponInfo.lastIndexOf("减"));
-		String couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 1);
+		String couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 1, couponInfo.length() - 1);
 		System.out.println(couponValue);
-		couponValue = couponInfo.substring(8);
+
+		couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 1);
 		System.out.println(couponValue);
-		System.out.println(8888888);
-		
-		// couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 2);    //StringIndexOutOfBoundsException
-		// System.out.println(couponValue);
+
+		couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 1);
+		System.out.println(couponValue);
+
 	}
 }

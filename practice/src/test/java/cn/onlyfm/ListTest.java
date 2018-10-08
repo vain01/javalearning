@@ -33,4 +33,34 @@ public class ListTest {
 		System.out.println(abc);
 
 	}
+
+	@Test
+	public void testPage() {
+
+		List<String> retData = new ArrayList<>();
+		retData.add("a");
+		retData.add("b");
+		retData.add("c");
+		retData.add("d");
+		retData.add("e");
+		retData.add("f");
+		retData.add("g");
+		retData.add("h");
+		retData.add("i");
+		retData.add("j");
+
+		int pageSize = 3;
+		int pageNo = 13;
+		try {
+			int lowIndex = pageSize * (pageNo - 1);
+			int hightIndex = pageSize * pageNo;
+			hightIndex = retData.size() >= lowIndex && retData.size() <= hightIndex
+				? retData.size() % pageSize + pageSize * (pageNo - 1)
+				: hightIndex;
+			retData = retData.subList(lowIndex, hightIndex);
+			System.out.println(retData);
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

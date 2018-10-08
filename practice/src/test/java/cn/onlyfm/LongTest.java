@@ -32,4 +32,16 @@ public class LongTest {
 		y = 500L;
 		System.out.println(Long.compare(x, y)); // -1
 	}
+
+	@Test
+	public void testLong() {
+		Long l = Long.valueOf(null);
+		System.out.println(l);
+	}
+
+	@Test
+	public void testMinMax() {
+		System.out.println(Long.MIN_VALUE);
+		System.out.println(Long.MAX_VALUE);
+	}
 }

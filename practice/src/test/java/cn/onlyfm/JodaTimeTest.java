@@ -53,4 +53,27 @@ public class JodaTimeTest {
 		dateTime.plusDays(1);
 		System.out.println(dateTime);
 	}
+
+	@Test
+	public void testDayMillis() {
+		DateTime dateTime = new DateTime();
+		System.out.println(dateTime.getMillis());
+		System.out.println(dateTime.getMillis() - dateTime.getMillisOfDay());
+		System.out.println(dateTime.getMillisOfDay());
+
+		System.out.println(dateTime.plusDays(1).getMillis() - dateTime.plusDays(1).getMillisOfDay());
+		System.out.println(dateTime.getMillis());
+	}
+
+	@Test
+	public void testChangeable() {
+		DateTime dateTime = new DateTime();
+		System.out.println(dateTime.getMillis());
+		setDateTime(dateTime);
+		System.out.println(dateTime.getMillis());//是不可变对象
+	}
+
+	private void setDateTime(DateTime dateTime) {
+		dateTime.plusDays(1);
+	}
 }
