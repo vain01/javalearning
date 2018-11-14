@@ -18,4 +18,10 @@ public class User {
 	public void showBirthday(){
 		System.out.println("birthday");
 	}
+
+	@Override
+	public String toString() {
+		return this.getUserName() + "\n" +
+			this.getMoblie();
+	}
 }

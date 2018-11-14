@@ -1,7 +1,5 @@
 package cn.onlyfm;
 
-import cn.onlyfm.annotation.LombokLearning;
-import cn.onlyfm.annotation.User;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 
@@ -95,20 +93,6 @@ public class MiscTest {
 	// 	Class<?> targetClass = method.getDeclaringClass();
 	// 	System.out.println(targetClass);
 	// }
-
-	@Test
-	public void testLombok() {
-		LombokLearning lombokLearning = new LombokLearning();
-		// lombokLearning.setName("Hello");
-
-		User user = new User();
-		user.setMoblie(lombokLearning.getPhone());
-		user.setUserName(lombokLearning.getName());
-
-		System.out.println(user.getMoblie());
-		System.out.println(user.getUserName());
-		System.out.println(user);
-	}
 
 	@Test
 	public void testBillDTO() {

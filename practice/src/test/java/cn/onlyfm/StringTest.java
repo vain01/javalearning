@@ -2,10 +2,32 @@ package cn.onlyfm;
 
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author haoliang on 2018/8/22.
  */
 public class StringTest {
+	@Test
+	public void testArray() {
+		// String catStr = "19,10";
+		String catStr = "19";
+		String[] cats = catStr.split(",");
+		for (int i = 0; i < cats.length; i++) {
+			System.out.println(cats[i]);
+		}
+	}
+
+	@Test
+	public void testJoin() {
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+
+		System.out.println(String.join(",",list));
+	}
+
 	@Test
 	public void testStr() {
 		String a = null;

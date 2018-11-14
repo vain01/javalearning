@@ -12,6 +12,12 @@ import java.util.List;
  */
 public class ListTest {
 	@Test
+	public void testSize() {
+		List<User> users = new ArrayList<>();
+		System.out.println(users.size());
+	}
+
+	@Test
 	public void testName() {
 		User one = new User();
 		one.setMoblie(889L);
@@ -32,6 +38,17 @@ public class ListTest {
 		Collections.sort(abc, Collections.reverseOrder());
 		System.out.println(abc);
 
+	}
+
+	@Test
+	public void testAddAll() {
+		List<String> list = new ArrayList<>();
+		System.out.println(list);
+		List<String> sf = new ArrayList<>();
+		list.addAll(sf);
+		System.out.println(list);
+		list.addAll(null);
+		System.out.println(list);
 	}
 
 	@Test
