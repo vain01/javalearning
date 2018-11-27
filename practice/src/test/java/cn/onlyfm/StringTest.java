@@ -60,6 +60,11 @@ public class StringTest {
 
 		couponValue = couponInfo.substring(couponInfo.lastIndexOf("减") + 1);
 		System.out.println(couponValue);
+	}
 
+	@Test
+	public void testSubStringSimple() {
+		String testing = "0123456";
+		System.out.println(testing.substring(2,testing.length()));
 	}
 }
