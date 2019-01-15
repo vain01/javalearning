@@ -44,4 +44,11 @@ public class LongTest {
 		System.out.println(Long.MIN_VALUE);
 		System.out.println(Long.MAX_VALUE);
 	}
+
+	@Test
+	public void testEquals() {
+		Long n=0L;
+		System.out.println(n.equals(0L));
+
+	}
 }

@@ -48,4 +48,11 @@ public class EnumTest {
 				System.out.println(testing.getValue());
 		}
 	}
+
+	@Test
+	public void testEquals() {
+		CardType type = CardType.SUPREME;
+		System.out.println(!type.equals(CardType.CLASSIC));
+		System.out.println(type != CardType.CLASSIC);
+	}
 }

@@ -12,4 +12,11 @@ public class IntegerTest {
 		Integer b = 9;
 		System.out.println(a == b);
 	}
+
+	@Test
+	public void testIntegerAndInt() {
+		String pageSize = "33";
+		int a = Integer.valueOf(pageSize);
+		System.out.println(a);
+	}
 }

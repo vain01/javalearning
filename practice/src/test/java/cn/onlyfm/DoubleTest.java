@@ -28,4 +28,11 @@ public class DoubleTest {
 		Double ret = Double.valueOf(input);
 		System.out.println(ret);
 	}
+
+	@Test
+	public void testCompare() {
+		Double left = 2.3;
+		Double right = 0.0;
+		System.out.println(left.compareTo(right));
+	}
 }

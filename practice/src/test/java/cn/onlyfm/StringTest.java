@@ -1,5 +1,6 @@
 package cn.onlyfm;
 
+import cn.onlyfm.utils.StringUtil;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class StringTest {
 		list.add("a");
 		list.add("b");
 
-		System.out.println(String.join(",",list));
+		System.out.println(String.join(",", list));
 	}
 
 	@Test
@@ -65,6 +66,50 @@ public class StringTest {
 	@Test
 	public void testSubStringSimple() {
 		String testing = "0123456";
-		System.out.println(testing.substring(2,testing.length()));
+		System.out.println(testing.substring(2, testing.length()));
+	}
+
+	@Test
+	public void testasf() {
+		String origin = "null";
+		int expectedMaxLength = 3;
+		String ret = StringUtil.getProperLengthString(origin, expectedMaxLength);
+		System.out.println(ret);
+	}
+
+	@Test
+	public void testContains() {
+		String origin = "lgb,mbt";
+		boolean ret = origin.contains("lgb".toLowerCase());
+		System.out.println(ret);
+		// boolean res = origin.contains(null);
+		// System.out.println(res);
+	}
+
+	@Test
+	public void testStringNull() {
+		String testing = "abc";
+		System.out.println(testing + null);
+	}
+
+	@Test
+	public void testTrim() {
+		String testing = " abc ";
+		System.out.println("--" + testing.trim() + "--");
+	}
+
+	@Test
+	public void testStringContains() {
+		String companyChannel = "blackcard";
+		String marketChannel = "lgb";
+		System.out.println(!companyChannel.contains(marketChannel));
+	}
+
+	@Test
+	public void testToString() {
+		Object o = "abc";
+		System.out.println(o.toString().substring(0, 2));
+		Object s = "xyz";
+		System.out.println(s.toString().substring(0, 2));
 	}
 }

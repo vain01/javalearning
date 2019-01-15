@@ -47,7 +47,7 @@ public class ListTest {
 		List<String> sf = new ArrayList<>();
 		list.addAll(sf);
 		System.out.println(list);
-		list.addAll(null);
+		list.add(null);
 		System.out.println(list);
 	}
 

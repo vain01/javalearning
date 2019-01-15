@@ -12,4 +12,18 @@ public class NullTest {
 		System.out.println(("adsf").equals(abcd));
 		System.out.println(abcd.equals("adsf"));
 	}
+
+	@Test
+	public void testToString() {
+		// System.out.println(null.toString());
+	}
+
+	@Test
+	public void testStringEquals() {
+		System.out.println("abc".equals("abc"));
+		System.out.println("abc".equals("Abc"));
+		System.out.println("abc".equalsIgnoreCase("Abc"));
+		System.out.println("abc".equals(null));
+		System.out.println("abc".equalsIgnoreCase(null));
+	}
 }
