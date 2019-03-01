@@ -15,4 +15,9 @@ public class DecimalFormatTest {
 		commissionEstimatedValue = Double.valueOf(df.format(commissionEstimatedValue));
 		System.out.println(commissionEstimatedValue);
 	}
+
+	@Test
+	public void testDf() {
+
+	}
 }

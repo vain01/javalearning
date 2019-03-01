@@ -7,8 +7,7 @@ import java.math.BigDecimal;
 /**
  * @author haoliang on 2018/11/14.
  */
-public class BigDecimalTest
-{
+public class BigDecimalTest {
 	@Test
 	public void testNull() {
 		String nullStr = null;
@@ -36,6 +35,17 @@ public class BigDecimalTest
 
 		BigDecimal result = a.add(b);
 		System.out.println(result);
+	}
+
+	@Test
+	public void testEquals() {
+		BigDecimal source = BigDecimal.ZERO;
+		System.out.println(source);
+		BigDecimal target = BigDecimal.valueOf(0.000);
+		System.out.println(target);
+		System.out.println(source.equals(target));
+		System.out.println(source.compareTo(target) == 0);
+		System.out.println(source.equals(BigDecimal.ZERO));
 	}
 
 	@Test

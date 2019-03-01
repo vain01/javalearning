@@ -78,7 +78,8 @@ public class JodaTimeTest {
 	@Test
 	public void testStringDate() {
 		DateTime dateTime = new DateTime("2018-8-7");
-		System.out.println(dateTime.toDate());
+		System.out.println(dateTime.getMillis());
+		System.out.println(dateTime.toDate());  //Tue Aug 07 00:00:00 CST 2018
 		System.out.println(dateTime);
 		dateTime.plusDays(1);
 		System.out.println(dateTime);
