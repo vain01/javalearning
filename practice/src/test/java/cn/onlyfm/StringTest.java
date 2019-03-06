@@ -99,6 +99,12 @@ public class StringTest {
 	}
 
 	@Test
+	public void testEmoj() {
+		String testing = "\\xF0\\x9F\\x98\\x84";
+		System.out.println(StringUtil.doesContainEmoj(testing));
+	}
+
+	@Test
 	public void testStringContains() {
 		String companyChannel = "blackcard";
 		String marketChannel = "lgb";
@@ -111,5 +117,11 @@ public class StringTest {
 		System.out.println(o.toString().substring(0, 2));
 		Object s = "xyz";
 		System.out.println(s.toString().substring(0, 2));
+	}
+
+	@Test
+	public void testEmojFilter() {
+		String testing = "\\xF0\\x9F\\x98\\x84";
+		System.out.println(StringUtil.containsEmoji(testing));
 	}
 }
