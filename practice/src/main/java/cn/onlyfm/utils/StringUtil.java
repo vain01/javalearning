@@ -174,4 +174,16 @@ public final class StringUtil {
 			}
 		}
 	}
+
+	public static String byte2hex(byte[] bytes) {
+		StringBuilder sign = new StringBuilder();
+		for (int i = 0; i < bytes.length; i++) {
+			String hex = Integer.toHexString(bytes[i] & 0xFF);
+			if (hex.length() == 1) {
+				sign.append("0");
+			}
+			sign.append(hex.toUpperCase());
+		}
+		return sign.toString();
+	}
 }

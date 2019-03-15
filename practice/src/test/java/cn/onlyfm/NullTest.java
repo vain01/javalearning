@@ -14,7 +14,7 @@ public class NullTest {
 	}
 
 	@Test
-	public void testToString() {
+	public void testNullToString() {
 		// System.out.println(null.toString());
 	}
 
@@ -26,4 +26,5 @@ public class NullTest {
 		System.out.println("abc".equals(null));
 		System.out.println("abc".equalsIgnoreCase(null));
 	}
+
 }
