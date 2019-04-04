@@ -1,5 +1,6 @@
 package cn.onlyfm;
 
+import cn.onlyfm.model.User;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -36,5 +37,14 @@ public class JsonStringTest {
 		JSONObject testO = testA.getJSONObject(0);
 		System.out.println("testO is " + testO);
 
+	}
+
+	@Test
+	public void testToJsonString() {
+		User user = new User();
+		user.setName("abc");
+		System.out.println(user);
+		System.out.println(user.toString());
+		System.out.println(JSON.toJSONString(user));
 	}
 }

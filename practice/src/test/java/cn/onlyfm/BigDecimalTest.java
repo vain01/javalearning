@@ -63,4 +63,11 @@ public class BigDecimalTest {
 		BigDecimal result = a.negate();     //-100
 		System.out.println(result);
 	}
+
+	@Test
+	public void testCompareTo() {
+		BigDecimal creditAmount = BigDecimal.ZERO;
+		System.out.println(creditAmount);
+		System.out.println(creditAmount.compareTo(BigDecimal.TEN) < 0);
+	}
 }

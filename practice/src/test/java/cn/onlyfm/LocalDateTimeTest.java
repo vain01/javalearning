@@ -2,7 +2,9 @@ package cn.onlyfm;
 
 import org.testng.annotations.Test;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -23,5 +25,25 @@ public class LocalDateTimeTest {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		System.out.println(localDateTime);
 		System.out.println(localDateTime.format(dateTimeFormatter));
+	}
+
+	@Test
+	public void testNano() {
+		Long now = System.currentTimeMillis();
+		System.out.println(now);
+		Instant instant = Instant.ofEpochMilli(now);
+		LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneOffset.systemDefault());
+		System.out.println(localDateTime);
+		System.out.println(localDateTime.toInstant(ZoneOffset.of("+8")).toEpochMilli());
+	}
+
+	@Test
+	public void testMinus() {
+		LocalDateTime localDateTime = LocalDateTime.now();
+		System.out.println(localDateTime);//2019-03-20T17:02:18.815
+		LocalDateTime ldt = localDateTime.minusYears(1L);
+		System.out.println(ldt);//2019-03-19T17:02:18.815
+
+		System.out.println(localDateTime.compareTo(ldt));
 	}
 }
