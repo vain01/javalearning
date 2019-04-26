@@ -126,4 +126,15 @@ public class JodaTimeTest {
 	private void setDateTime(DateTime dateTime) {
 		dateTime.plusDays(1);
 	}
+
+	@Test
+	public void testTime() {
+		Long now = System.currentTimeMillis();
+		DateTime dateTime = new DateTime("2019-04-24T20:00:01.000+08:00");
+		// System.out.println(dateTime);
+		// System.out.println(dateTime.getMillis());
+		// System.out.println(dateTime.getMillisOfDay());
+		dateTime = new DateTime(now);
+		System.out.println(dateTime.getMillisOfDay());
+	}
 }

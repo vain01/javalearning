@@ -92,4 +92,19 @@ public class ListTest {
 		System.out.println(testing);
 		System.out.println(testing.size());
 	}
+
+	@Test
+	public void testAddWithIndex() {
+		List<String> testing = Arrays.asList("a,b,c".split(","));
+		// List<String> testing = new ArrayList<>();
+		testing.add("a");
+		testing.add("b");
+		testing.add("c");
+		testing.add("d");
+		testing.add("e");
+		System.out.println(testing);
+		System.out.println(testing.size());
+		testing.add(2, "hao");
+		System.out.println(testing);
+	}
 }

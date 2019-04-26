@@ -53,5 +53,6 @@ public class AESUtilTest {
 		ret.put("data", encryptedContent);
 		ret.put("channel", channel);
 		System.out.println(ret.toJSONString());
+		System.out.println("curl -i -X POST 'http://yxb-alpha-001:8080/yhb/sina/base' -H 'Content-Type: application/json' -d'" + ret.toJSONString() + "'");
 	}
 }

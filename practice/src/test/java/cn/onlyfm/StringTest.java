@@ -90,6 +90,7 @@ public class StringTest {
 	public void testStringNull() {
 		String testing = "abc";
 		System.out.println(testing + null);
+		System.out.println(testing.equals(null));
 	}
 
 	@Test
@@ -123,5 +124,12 @@ public class StringTest {
 	public void testEmojFilter() {
 		String testing = "\\xF0\\x9F\\x98\\x84";
 		System.out.println(StringUtil.containsEmoji(testing));
+	}
+
+	@Test
+	public void testConcat() {
+		String aHex = Integer.toHexString(1);
+		System.out.println(aHex);
+		System.out.println(aHex.concat("0"));
 	}
 }

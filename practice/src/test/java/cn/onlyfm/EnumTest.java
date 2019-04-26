@@ -1,6 +1,7 @@
 package cn.onlyfm;
 
 import cn.onlyfm.model.CardType;
+import cn.onlyfm.model.ResourceStatus;
 import cn.onlyfm.model.Signal;
 import org.testng.annotations.Test;
 
@@ -44,9 +45,18 @@ public class EnumTest {
 		switch (testing) {
 			case CLASSIC:
 				System.out.println(testing);
+				System.out.println(testing.getClass());
 				System.out.println(testing.name());
+				System.out.println(testing.name().getClass());
 				System.out.println(testing.getValue());
+				System.out.println(testing.getValue().getClass());
 		}
+	}
+
+	@Test
+	public void testContains() {
+		String status = "dis";
+		ResourceStatus resourceStatus = ResourceStatus.valueOf(status); //注意如果status不存在的话,将会出现异常java.lang.IllegalArgumentException: No enum constant cn.onlyfm.model.ResourceStatus.dis
 	}
 
 	@Test
