@@ -3,10 +3,7 @@ package cn.onlyfm;
 import cn.onlyfm.annotation.User;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author haoliang on 2018/9/5.
@@ -21,10 +18,10 @@ public class ListTest {
 	@Test
 	public void testName() {
 		User one = new User();
-		one.setMoblie(889L);
+		one.setMobile(889L);
 		one.setUserName("abc");
 		User two = new User();
-		two.setMoblie(887L);
+		two.setMobile(887L);
 		two.setUserName("edf");
 		List<User> users = new ArrayList<>();
 		users.add(one);
@@ -73,8 +70,8 @@ public class ListTest {
 			int lowIndex = pageSize * (pageNo - 1);
 			int hightIndex = pageSize * pageNo;
 			hightIndex = retData.size() >= lowIndex && retData.size() <= hightIndex
-					? retData.size() % pageSize + pageSize * (pageNo - 1)
-					: hightIndex;
+				? retData.size() % pageSize + pageSize * (pageNo - 1)
+				: hightIndex;
 			retData = retData.subList(lowIndex, hightIndex);
 			System.out.println(retData);
 		}
@@ -106,5 +103,16 @@ public class ListTest {
 		System.out.println(testing.size());
 		testing.add(2, "hao");
 		System.out.println(testing);
+	}
+
+	@Test
+	public void testFind() {
+		String expressId = "yt";
+		String venders = "sto:申通,yt:圆通,yd:韵达";
+		if (venders.indexOf(expressId) == -1) {
+			System.out.println("return null");
+		}
+		String targetVender = venders.substring(venders.indexOf(expressId)).split(",")[0];
+		System.out.println(targetVender.substring(targetVender.indexOf(":") + 1));
 	}
 }

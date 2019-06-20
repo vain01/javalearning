@@ -34,7 +34,20 @@ public class BigDecimalTest {
 		BigDecimal b = new BigDecimal(200);
 
 		BigDecimal result = a.add(b);
+		System.out.println(result); //300
+		BigDecimal c = new BigDecimal(299);
+		result = result.add(c);
 		System.out.println(result);
+	}
+
+	@Test
+	public void testAddMethod() {
+		BigDecimal price = BigDecimal.ZERO;
+		price = price.add(BigDecimal.valueOf(20.00));
+		price = price.add(BigDecimal.valueOf(0.00));
+		System.out.println(price);
+		price = price.multiply(new BigDecimal("0.98"));
+		System.out.println(price);
 	}
 
 	@Test
@@ -51,7 +64,7 @@ public class BigDecimalTest {
 	@Test
 	public void testPlus() {
 		BigDecimal a = new BigDecimal(-100);
-
+		System.out.println(a);
 		BigDecimal result = a.plus();     //-100
 		System.out.println(result);
 	}
@@ -59,7 +72,8 @@ public class BigDecimalTest {
 	@Test
 	public void testNegate() {
 		BigDecimal a = new BigDecimal(100);
-
+		System.out.println(a);
+		//取相反数
 		BigDecimal result = a.negate();     //-100
 		System.out.println(result);
 	}

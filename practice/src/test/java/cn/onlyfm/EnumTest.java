@@ -49,6 +49,7 @@ public class EnumTest {
 				System.out.println(testing.name());
 				System.out.println(testing.name().getClass());
 				System.out.println(testing.getValue());
+				System.out.println(CardType.CLASSIC.getValue());
 				System.out.println(testing.getValue().getClass());
 		}
 	}
@@ -64,5 +65,11 @@ public class EnumTest {
 		CardType type = CardType.SUPREME;
 		System.out.println(!type.equals(CardType.CLASSIC));
 		System.out.println(type != CardType.CLASSIC);
+	}
+
+	@Test
+	public void testValueOfGet() {
+		String cla = "CLASSIC";
+		System.out.println(CardType.valueOf(cla).getValue());
 	}
 }

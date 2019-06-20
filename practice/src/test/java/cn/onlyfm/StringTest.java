@@ -118,6 +118,8 @@ public class StringTest {
 		System.out.println(o.toString().substring(0, 2));
 		Object s = "xyz";
 		System.out.println(s.toString().substring(0, 2));
+		String mobile = "17717550328";
+		System.out.println(mobile.substring(7));
 	}
 
 	@Test

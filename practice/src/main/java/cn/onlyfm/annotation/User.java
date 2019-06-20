@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
 	private String userName;
-	private Long moblie;
+	private Long mobile;
 	public int habbit;
 
 	public void showBirthday(){
@@ -22,6 +22,6 @@ public class User {
 	@Override
 	public String toString() {
 		return this.getUserName() + "\n" +
-			this.getMoblie();
+			this.getMobile();
 	}
 }

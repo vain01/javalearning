@@ -60,7 +60,7 @@ public class StreamTest {
 			new User("lisi", 17192193865L, 2),
 			new User("zhangs", 13482892312L, 3));
 
-		Map<String, Long> userNameMobile = users.stream().collect(Collectors.toMap(User::getUserName,User::getMoblie));
+		Map<String, Long> userNameMobile = users.stream().collect(Collectors.toMap(User::getUserName,User::getMobile));
 		System.out.println(userNameMobile);
 		System.out.println(userNameMobile.get("asdf")==null);
 
