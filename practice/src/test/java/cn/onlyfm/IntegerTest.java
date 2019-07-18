@@ -34,4 +34,11 @@ public class IntegerTest {
 		int b = Integer.valueOf(a);
 		System.out.println(b);
 	}
+
+	@Test
+	public void testIntegerString() {
+		Integer enabled = 1;
+		System.out.println(enabled.toString());
+		System.out.println(enabled + "");
+	}
 }

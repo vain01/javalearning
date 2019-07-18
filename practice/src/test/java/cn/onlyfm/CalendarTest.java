@@ -32,8 +32,11 @@ public class CalendarTest {
 		System.out.println(date);
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
+		System.out.println(calendar.getTime());
 		calendar.add(Calendar.MINUTE, 20);
-		System.out.println(calendar);
+		System.out.println(calendar.getTime());
+		calendar.add(Calendar.DAY_OF_YEAR, 15);
+		System.out.println(calendar.getTime());
 	}
 
 	@Test

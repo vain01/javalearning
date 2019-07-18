@@ -19,6 +19,12 @@ public class JsonStringTest {
 		System.out.println(retOjb);
 		System.out.println(retOjb.get("status"));
 
+		System.out.println("=================");
+		Object retObject = "{\"status\":\"1\",\"data\":{\"id\":51,\"addTime\":1537520733507,\"expressStatus\":0}}";
+		JSONObject xxy = JSONObject.parseObject(ret + "");
+		System.out.println(xxy);
+		System.out.println("=================");
+
 		String retJsonStr = JSON.toJSONString(ret);
 		System.out.println(retJsonStr);
 		String xx = JSON.parse(retJsonStr).toString();
@@ -46,5 +52,44 @@ public class JsonStringTest {
 		System.out.println(user);
 		System.out.println(user.toString());
 		System.out.println(JSON.toJSONString(user));
+	}
+
+	@Test
+	public void testEmptyStringToJSONObect() {
+		String nullStr = null;
+		JSONObject nullJSONObject = JSON.parseObject(null);
+		System.out.println(nullJSONObject);
+		System.out.println(nullJSONObject == null);
+
+		String emptyStr = "";
+		JSONObject emptyJSONObject = JSON.parseObject(emptyStr);
+		System.out.println(emptyJSONObject);
+		System.out.println(emptyJSONObject == null);
+		// System.out.println(emptyJSONObject.isEmpty()); //NullPointerException
+
+		emptyStr = "{}";
+		emptyJSONObject = JSON.parseObject(emptyStr);
+		System.out.println(emptyJSONObject);
+		System.out.println(emptyJSONObject == null);
+		System.out.println(emptyJSONObject.isEmpty());
+	}
+
+	@Test
+	public void testEmptyStringToJSONArray() {
+		String nullStr = null;
+		JSONArray nullJSONArray = JSON.parseArray(null);
+		System.out.println(nullJSONArray);
+		System.out.println( nullJSONArray == null);//true
+
+		String emptyStr = "";
+		JSONArray emptyJSONArray = JSON.parseArray(emptyStr);
+		System.out.println(emptyJSONArray);
+		System.out.println(emptyJSONArray == null);//true
+
+		String emptyArr = "[]";
+		JSONArray emptyJSONArr = JSON.parseArray(emptyArr);
+		System.out.println(emptyJSONArr);
+		System.out.println(emptyJSONArr == null);//false
+		System.out.println(emptyJSONArr.isEmpty());//true
 	}
 }

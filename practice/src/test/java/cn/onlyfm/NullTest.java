@@ -20,6 +20,8 @@ public class NullTest {
 
 	@Test
 	public void testStringEquals() {
+		System.out.println("1".equals(null));
+		System.out.println("1".equals(null));
 		System.out.println("abc".equals("abc"));
 		System.out.println("abc".equals("Abc"));
 		System.out.println("abc".equalsIgnoreCase("Abc"));
