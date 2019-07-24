@@ -1,6 +1,7 @@
 package cn.onlyfm;
 
 import cn.onlyfm.utils.StringUtil;
+import com.alibaba.fastjson.JSON;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -10,6 +11,19 @@ import java.util.List;
  * @author haoliang on 2018/8/22.
  */
 public class StringTest {
+	@Test
+	public void testSplit() {
+		// String oriStr = null; //NullPointerException
+		// String oriStr = ""; //[""]
+		// String oriStr = "ui"; //["ui"]
+		// String oriStr = "ui,"; //["ui"]
+		String oriStr = "ui,api"; //["ui","api"]
+
+		String delimiter = ",";
+		String[] strArray = oriStr.split(delimiter);
+		System.out.println(JSON.toJSONString(strArray));
+	}
+
 	@Test
 	public void testArray() {
 		// String catStr = "19,10";
