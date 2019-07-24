@@ -51,4 +51,12 @@ public class LongTest {
 		System.out.println(n.equals(0L));
 
 	}
+
+	@Test
+	public void testDivide() {
+		String endTimeStr = "604800000";
+		Long endTime = Long.parseLong(endTimeStr);
+		System.out.println(endTime);
+		System.out.println(endTime / 1000);
+	}
 }

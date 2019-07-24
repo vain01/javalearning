@@ -28,4 +28,14 @@ public class RandomTest {
 		uuid = uuid.replace(uuid.substring(0, rnd), uuid.substring(0, rnd).toUpperCase());
 		System.out.println(uuid);
 	}
+
+	@Test
+	public void testThreadLocalRandom() {
+		//0<=random<1
+		double random = ThreadLocalRandom.current().nextDouble();
+		int randomInt = (int) (random * 100);
+		System.out.println(randomInt);
+		Integer finalRandomNum = (int) (random * 100);
+		System.out.println(finalRandomNum);
+	}
 }

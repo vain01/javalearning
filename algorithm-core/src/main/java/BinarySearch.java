@@ -17,7 +17,7 @@ public class BinarySearch {
 		int hi = nums.length - 1;
 		while (lo <= hi) {
 			int mid = lo + (hi - lo) / 2;
-			if (key > nums[mid]) {
+			if (nums[mid] < key) {
 				lo = mid + 1;
 			} else if (key < nums[mid]) {
 				hi = mid - 1;
@@ -43,7 +43,7 @@ public class BinarySearch {
 		if (nums == null || lo > hi)
 			return -1;
 		int mid = lo + (hi - lo) / 2;
-		if (key > nums[mid]) {
+		if (nums[mid] < key) {
 			return binarySearchRecursion(nums, mid + 1, hi, key);
 		} else if (key < nums[mid]) {
 			return binarySearchRecursion(nums, lo, mid - 1, key);

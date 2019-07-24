@@ -20,4 +20,15 @@ public class MapTest {
 		String str = JSON.toJSONString(map);
 		System.out.println(str);
 	}
+
+	@Test
+	public void testSize() {
+		Map<String, String> kvs = new HashMap<>();
+		System.out.println(kvs.size());
+		kvs.put("x", "1");
+		kvs.put("y", "2");
+		kvs.put("z", "3");
+		kvs.put("x", "1");
+		System.out.println(kvs.size());
+	}
 }

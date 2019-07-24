@@ -78,7 +78,8 @@ public class RSAUtils {
 	public static String readPEMFile(String filename) {
 		try {
 			return readPEMFile(new FileInputStream(filename));
-		} catch (FileNotFoundException e) {
+		}
+		catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -107,19 +108,23 @@ public class RSAUtils {
 				}
 
 				return ret.toString();
-			} catch (Exception ex) {
+			}
+			catch (Exception ex) {
 				throw new RuntimeException(ex);
-			} finally {
+			}
+			finally {
 				try {
 					stream.close();
-				} catch (Exception ex) {
+				}
+				catch (Exception ex) {
 					ex.printStackTrace();
 				}
 
 				if (null != in) {
 					try {
 						in.close();
-					} catch (Exception ex) {
+					}
+					catch (Exception ex) {
 						ex.printStackTrace();
 					}
 				}
@@ -148,7 +153,7 @@ public class RSAUtils {
 		// catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
 		// 	throw new RuntimeException(ex);
 		// }
-		catch (Exception ex){
+		catch (Exception ex) {
 			throw new RuntimeException(ex);
 		}
 	}
@@ -165,7 +170,7 @@ public class RSAUtils {
 		// catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
 		// 	throw new RuntimeException(ex);
 		// }
-		catch(Exception ex) {
+		catch (Exception ex) {
 			throw new RuntimeException(ex);
 		}
 	}
@@ -186,7 +191,8 @@ public class RSAUtils {
 			cipher.init(Cipher.DECRYPT_MODE, privateKey);
 
 			return cipher.doFinal(encryptedData);
-		} catch (Exception ex) {
+		}
+		catch (Exception ex) {
 			throw new RuntimeException(ex);
 		}
 	}
@@ -213,7 +219,8 @@ public class RSAUtils {
 			while (inputLen - offSet > 0) {
 				if (inputLen - offSet > MAX_ENCRYPT_BLOCK) {
 					cache = cipher.doFinal(data, offSet, MAX_ENCRYPT_BLOCK);
-				} else {
+				}
+				else {
 					cache = cipher.doFinal(data, offSet, inputLen - offSet);
 				}
 				out.write(cache, 0, cache.length);
@@ -225,7 +232,8 @@ public class RSAUtils {
 			out.close();
 
 			return new String(encryptedData, "ASCII");
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -252,7 +260,8 @@ public class RSAUtils {
 			while (inputLen - offSet > 0) {
 				if (inputLen - offSet > MAX_ENCRYPT_BLOCK) {
 					cache = cipher.doFinal(data, offSet, MAX_ENCRYPT_BLOCK);
-				} else {
+				}
+				else {
 					cache = cipher.doFinal(data, offSet, inputLen - offSet);
 				}
 				out.write(cache, 0, cache.length);
@@ -264,7 +273,8 @@ public class RSAUtils {
 			out.close();
 
 			return new String(encryptedData, "ASCII");
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -291,7 +301,8 @@ public class RSAUtils {
 			while (inputLen - offSet > 0) {
 				if (inputLen - offSet > MAX_DECRYPT_BLOCK) {
 					cache = cipher.doFinal(encryptedData, offSet, MAX_DECRYPT_BLOCK);
-				} else {
+				}
+				else {
 					cache = cipher.doFinal(encryptedData, offSet, inputLen - offSet);
 				}
 
@@ -303,8 +314,9 @@ public class RSAUtils {
 			out.close();
 
 			return (charset == null || StringUtils.isEmpty(charset)) ? new String(decryptedData)
-				: new String(decryptedData, charset);
-		} catch (Exception e) {
+					: new String(decryptedData, charset);
+		}
+		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -331,7 +343,8 @@ public class RSAUtils {
 			while (inputLen - offSet > 0) {
 				if (inputLen - offSet > MAX_DECRYPT_BLOCK) {
 					cache = cipher.doFinal(encryptedData, offSet, MAX_DECRYPT_BLOCK);
-				} else {
+				}
+				else {
 					cache = cipher.doFinal(encryptedData, offSet, inputLen - offSet);
 				}
 
@@ -343,8 +356,9 @@ public class RSAUtils {
 			out.close();
 
 			return (charset == null || StringUtils.isEmpty(charset)) ? new String(decryptedData)
-				: new String(decryptedData, charset);
-		} catch (Exception e) {
+					: new String(decryptedData, charset);
+		}
+		catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -378,6 +392,5 @@ public class RSAUtils {
 
 		return new String(Base64Utils.encode(signature.sign()));
 	}
-
 
 }

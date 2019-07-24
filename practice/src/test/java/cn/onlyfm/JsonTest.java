@@ -1,6 +1,7 @@
 package cn.onlyfm;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.testng.annotations.Test;
 
@@ -48,5 +49,16 @@ public class JsonTest {
 
 		JSONObject xx = JSON.parseObject(ori);
 		System.out.println(xx.get("result_list"));
+	}
+
+	@Test
+	public void testStrToArray() {
+		String invitationPicUrls = "[\"www\",\"baidu\",\"com\"]";
+		JSONArray xx = JSONArray.parseArray(invitationPicUrls);
+		System.out.println(xx);
+		JSONObject yy = new JSONObject();
+		yy.put("yy", xx);
+		yy.put("zz", JSONArray.parseArray(invitationPicUrls));
+		System.out.println(yy);
 	}
 }

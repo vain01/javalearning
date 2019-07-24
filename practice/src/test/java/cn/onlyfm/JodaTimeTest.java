@@ -28,13 +28,44 @@ public class JodaTimeTest {
 	}
 
 	@Test
+	public void testDayStart() {
+		DateTime dateTime = new DateTime();
+
+		DateTime todayStart = new DateTime(dateTime.getMillis() - dateTime.getMillisOfDay());
+		System.out.println(todayStart.getMillisOfDay()); //0
+		System.out.println(todayStart.getMillis());
+		System.out.println("todayStart:" + todayStart);
+		System.out.println("target:" + todayStart);
+
+		// "30600000"72001000"86399000"}
+		Long millisOfDay = 30600000L;
+		DateTime newDateTime = todayStart.plus(millisOfDay);
+		System.out.println(newDateTime);
+		millisOfDay = 72001000L;
+		newDateTime = todayStart.plus(millisOfDay);
+		System.out.println(newDateTime);
+		millisOfDay = 86399000L;
+		newDateTime = todayStart.plus(millisOfDay);
+		System.out.println(newDateTime);
+	}
+
+	@Test
 	public void testTomorrowStart() {
 		Long now = 1534162287000L;
 		DateTime dateTime = new DateTime(now);
 
-		System.out.println(new DateTime(dateTime.getMillis() - dateTime.getMillisOfDay())); // 2018-08-13T00:00:00.000+08:00
+		DateTime todayStart = new DateTime(dateTime.getMillis() - dateTime.getMillisOfDay());
+		System.out.println(todayStart); // 2018-08-13T00:00:00.000+08:00
+		System.out.println(todayStart.getMillisOfDay()); //0
+
 		dateTime = new DateTime(now).plusDays(1);
-		System.out.println(new DateTime(dateTime.getMillis() - dateTime.getMillisOfDay())); // 2018-08-14T00:00:00.000+08:00
+		DateTime tomorrowStart = new DateTime(dateTime.getMillis() - dateTime.getMillisOfDay());
+		System.out.println(tomorrowStart); // 2018-08-14T00:00:00.000+08:00
+		System.out.println(tomorrowStart.getMillisOfDay()); //0
+
+		long oneDayMillis = tomorrowStart.getMillis() - todayStart.getMillis();
+		System.out.println(oneDayMillis);
+		System.out.println(24 * 60 * 60 * 1000);
 	}
 
 	@Test
@@ -78,7 +109,8 @@ public class JodaTimeTest {
 	@Test
 	public void testStringDate() {
 		DateTime dateTime = new DateTime("2018-8-7");
-		System.out.println(dateTime.toDate());
+		System.out.println(dateTime.getMillis());
+		System.out.println(dateTime.toDate());  //Tue Aug 07 00:00:00 CST 2018
 		System.out.println(dateTime);
 		dateTime.plusDays(1);
 		System.out.println(dateTime);
@@ -124,5 +156,16 @@ public class JodaTimeTest {
 
 	private void setDateTime(DateTime dateTime) {
 		dateTime.plusDays(1);
+	}
+
+	@Test
+	public void testTime() {
+		Long now = System.currentTimeMillis();
+		DateTime dateTime = new DateTime("2019-04-24T20:00:01.000+08:00");
+		// System.out.println(dateTime);
+		// System.out.println(dateTime.getMillis());
+		// System.out.println(dateTime.getMillisOfDay());
+		dateTime = new DateTime(now);
+		System.out.println(dateTime.getMillisOfDay());
 	}
 }

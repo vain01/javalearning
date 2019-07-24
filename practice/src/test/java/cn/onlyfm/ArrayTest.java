@@ -2,6 +2,7 @@ package cn.onlyfm;
 
 import cn.onlyfm.annotation.User;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -18,4 +19,13 @@ public class ArrayTest {
 		userList = null;
 		System.out.println(CollectionUtils.isEmpty(userList));
 	}
+
+	@Test
+	public void testContains() {
+		String[] supportedDays = " 15,21".split(",");
+		Integer goods = 15;
+		System.out.println(ArrayUtils.contains(supportedDays, goods.toString()));
+	}
+
+
 }

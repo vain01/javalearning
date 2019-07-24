@@ -21,10 +21,10 @@ public class ListTest {
 	@Test
 	public void testName() {
 		User one = new User();
-		one.setMoblie(889L);
+		one.setMobile(889L);
 		one.setUserName("abc");
 		User two = new User();
-		two.setMoblie(887L);
+		two.setMobile(887L);
 		two.setUserName("edf");
 		List<User> users = new ArrayList<>();
 		users.add(one);

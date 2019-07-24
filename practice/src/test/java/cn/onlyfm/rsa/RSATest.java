@@ -12,14 +12,13 @@ import java.security.PublicKey;
 public class RSATest {
 	final String USER_DIR = System.getProperty("user.dir");
 
-	//String priFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/dev-pri-key.pem";
-	String priFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/hey-prod-pri-key.pem";
+	String priFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/pri-key.pem";
 	final PrivateKey privateKey = RSAUtils.loadPrivateKey(priFile);
-	//String pubFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/dev-pub-key.pem";
-	String pubFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/hey-prod-pub-key.pem";
+	String pubFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/pub-key.pem";
 	final PublicKey publicKey = RSAUtils.loadPublicKey(pubFile);
 
-	String data = "{\"name\": \"郝亮\", \"cardNo\": \"6227001217380029555\",\"orgCode\":\"haoliang\",\"channelCode\":\"CH000044\"}";
+	//String data = "{\"name\": \"郝亮\", \"cardNo\": \"6227001217380029555\",\"orgCode\":\"haoliang\",\"channelCode\":\"CH000044\"}";
+	String data = "{\"addChannel\": \"miniprograms\"}";
 
 	@Test
 	public void testLoad() {
@@ -27,8 +26,8 @@ public class RSATest {
 		final String USER_DIR = System.getProperty("user.dir");
 		System.out.println(USER_DIR);
 
-		String priFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/dev-pri-key.pem";
-		String pubFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/dev-pub-key.pem";
+		String priFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/pri-key.pem";
+		String pubFile = USER_DIR + "/src/test/java/cn/onlyfm/rsa/pub-key.pem";
 
 		final PrivateKey privateKey = RSAUtils.loadPrivateKey(priFile);
 		System.out.println(privateKey);

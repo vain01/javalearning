@@ -23,4 +23,16 @@ public class ListStringTest {
 			System.out.println(String.join(DELIMITER, expectedCats));
 		}
 	}
+
+	@Test
+	public void testListToString() {
+		List<String> expectedCats = new ArrayList<>();
+		expectedCats.add("a");
+		expectedCats.add("a");
+		expectedCats.add("a");
+		expectedCats.add("a");
+		System.out.println(expectedCats);
+		System.out.println(expectedCats.toString());
+
+	}
 }

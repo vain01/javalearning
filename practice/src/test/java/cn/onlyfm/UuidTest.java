@@ -16,6 +16,9 @@ public class UuidTest {
 	public void testRandomUUID() {
 		String id = UUID.randomUUID().toString();
 		System.out.println(id);
+		System.out.println(id.length());
+		System.out.println(id.replace("-", ""));
+		System.out.println(id.replace("-", "").length());
 	}
 
 	@Test

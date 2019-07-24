@@ -90,12 +90,19 @@ public class StringTest {
 	public void testStringNull() {
 		String testing = "abc";
 		System.out.println(testing + null);
+		System.out.println(testing.equals(null));
 	}
 
 	@Test
 	public void testTrim() {
 		String testing = " abc ";
 		System.out.println("--" + testing.trim() + "--");
+	}
+
+	@Test
+	public void testEmoj() {
+		String testing = "\\xF0\\x9F\\x98\\x84";
+		System.out.println(StringUtil.doesContainEmoj(testing));
 	}
 
 	@Test
@@ -111,5 +118,20 @@ public class StringTest {
 		System.out.println(o.toString().substring(0, 2));
 		Object s = "xyz";
 		System.out.println(s.toString().substring(0, 2));
+		String mobile = "17717550328";
+		System.out.println(mobile.substring(7));
+	}
+
+	@Test
+	public void testEmojFilter() {
+		String testing = "\\xF0\\x9F\\x98\\x84";
+		System.out.println(StringUtil.containsEmoji(testing));
+	}
+
+	@Test
+	public void testConcat() {
+		String aHex = Integer.toHexString(1);
+		System.out.println(aHex);
+		System.out.println(aHex.concat("0"));
 	}
 }

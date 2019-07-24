@@ -35,4 +35,16 @@ public class DoubleTest {
 		Double right = 0.0;
 		System.out.println(left.compareTo(right));
 	}
+
+	@Test
+	public void testCompareToZero() {
+		double a=0.0;
+		if (a == 0) {
+			System.out.println("zero");
+		}
+		String zeroStr = "0";
+		System.out.println("0 Str:" + (Double.valueOf(zeroStr).compareTo(0.0) == 0));
+		String zeroPointStr = "0.0";
+		System.out.println("0.0 Str:" + (Double.valueOf(zeroPointStr).compareTo(0.0) == 0));
+	}
 }
