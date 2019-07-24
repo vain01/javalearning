@@ -4,6 +4,7 @@ import cn.onlyfm.annotation.User;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -72,12 +73,23 @@ public class ListTest {
 			int lowIndex = pageSize * (pageNo - 1);
 			int hightIndex = pageSize * pageNo;
 			hightIndex = retData.size() >= lowIndex && retData.size() <= hightIndex
-				? retData.size() % pageSize + pageSize * (pageNo - 1)
-				: hightIndex;
+					? retData.size() % pageSize + pageSize * (pageNo - 1)
+					: hightIndex;
 			retData = retData.subList(lowIndex, hightIndex);
 			System.out.println(retData);
-		}catch (Exception e){
+		}
+		catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+
+	@Test
+	public void testAdd() {
+		List<String> testing = Arrays.asList("a,b,c".split(","));
+		System.out.println(testing);
+		System.out.println(testing.size());
+		testing.add("a");
+		System.out.println(testing);
+		System.out.println(testing.size());
 	}
 }
